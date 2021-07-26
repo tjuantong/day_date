@@ -1,0 +1,73 @@
+<!-- Day of the week with Date for notion widget (Dark mode) -->
+<!-- By: Trixelle Juan Tong -->
+
+<html> 
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
+    <style>
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 300;
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 10px;
+        color: white;
+      }
+
+      #date {
+        font-size: 40px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        text-align: center;
+         margin-bottom: 10px;
+        color: white;
+      }
+      
+      #year {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        color: white;
+        letter-spacing: 5px;
+      }
+
+      body{
+        background-color: rgb(48, 52, 55);
+      }
+    </style>  
+    <title>Day of the Week with Date Now</title> 
+  </head>
+
+  <body>
+      <h3 id="day"></h3>
+      <div id="date"></div>
+      <div id="year"></div>
+  </body>
+
+  <script>
+    window.onload = function() {
+      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      var date = new Date();
+      
+      var weekday = new Array(7);
+         weekday[0] = "Sunday";
+         weekday[1] = "Monday";
+         weekday[2] = "Tuesday";
+         weekday[3] = "Wednesday";
+         weekday[4] = "Thursday";
+         weekday[5] = "Friday";
+         weekday[6] = "Saturday";
+       
+      var dayOfWeek = weekday[date.getDay()];
+      
+      document.getElementById('day').innerHTML = dayOfWeek;
+      document.getElementById('date').innerHTML = months[date.getMonth()] + ' ' + date.getDate() 
+      document.getElementById('year').innerHTML = date.getFullYear();
+    };
+  </script>
+</html>
